@@ -1,0 +1,25 @@
+.header-main {
+  margin-bottom: 1em;
+  margin-top: 1em;
+
+  .location {
+    color: $white;
+    text-shadow: 0 0 $black;
+
+    a {
+      color: $twitter-color;
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .header-main {
+    .location {
+      margin-top: 2em;
+    }
+  }
+
+  .header-share {
+    padding-top: 2em;
+  }
+}

@@ -1,0 +1,29 @@
+<ul class="small-block-grid-2 medium-block-grid-4 text-center">
+  {{#each model}}
+    <li>
+      <h3 class="movie-title">{{title}}</h3>
+
+      <div class="movie-poster">
+        <img src="{{{unbound App.movieDbImageBase}}}{{{unbound poster_path}}}" alt="No movie poster for {{{unbound title}}}">
+      </div>
+
+      <strong>Showtimes</strong>
+
+      <p>
+        {{#each showtimes}}
+          {{{this}}}
+        {{else}}
+          No showtimes
+        {{/each}}
+      </p>
+
+      <div class="text-center">
+        <a class="button radius">Buy Tickets</a>
+      </div>
+    </li>
+  {{else}}
+    <li>
+      <p>Nothing playing right now.</p>
+    </li>
+  {{/each}}
+</ul>

@@ -1,0 +1,18 @@
+// Cursor
+.pointer {
+  cursor: pointer;
+}
+
+// Shadow
+.shadow {
+  box-shadow: $shadow;
+}
+
+// Text transform
+.lowercase {
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
