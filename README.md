@@ -1,7 +1,7 @@
 return-typeof-talk
 ==================
 
-An Ember application to accompany my talk on JavaScripts types
+An Ember application to accompany my talk on JavaScripts types: [return typeof talk;](http://slides.com/rockyneurock/return-typeof-talk#/)
 
 To build this project you will need node.js and gulp
 
