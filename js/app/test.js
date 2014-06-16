@@ -91,14 +91,14 @@ var TestRoute = {
 
             results[i].showtimes = [
               '10:00am',
-              '&nbsp; 4:00pm'
+              '4:00pm'
             ];
 
           } else {
 
             results[i].showtimes = [
               '1:00pm',
-              '&nbsp; 7:00pm'
+              '7:00pm'
             ];
           }
         }

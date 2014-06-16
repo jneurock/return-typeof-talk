@@ -17,12 +17,14 @@ vb.output.img = 'img/';
 
 // Source updates
 vb.sources.img = 'img/**/*';
+vb.sources.json = 'js/**/*.json';
 
 // Task updates
 vb.tasks.build.depends = [
   'handlebars',
   'img',
   'js-doc',
+  'json',
   'root'
 ];
 
@@ -33,6 +35,14 @@ vb.tasks.img = {
 
     return gulp.src( this.sources.img )
       .pipe( gulp.dest( this.output.publish + this.output.img ) );
+  }
+};
+
+vb.tasks.json = {
+  cb: function() {
+
+    return gulp.src( this.sources.json )
+      .pipe( gulp.dest( this.output.publish + this.output.js ) );
   }
 };
 

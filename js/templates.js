@@ -81,23 +81,17 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 Ember.TEMPLATES["movies"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this;
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
 
 function program1(depth0,data) {
   
-  var buffer = '', stack1;
+  var buffer = '', stack1, helper, options;
   data.buffer.push("\n    <li>\n      <h3 class=\"movie-title\">");
   stack1 = helpers._triageMustache.call(depth0, "title", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</h3>\n\n      <div class=\"movie-poster\">\n        <img src=\"");
-  stack1 = helpers.unbound.call(depth0, "App.movieDbImageBase", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  stack1 = helpers.unbound.call(depth0, "poster_path", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\" alt=\"No movie poster for ");
-  stack1 = helpers.unbound.call(depth0, "title", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\">\n      </div>\n\n      <strong>Showtimes</strong>\n\n      <p>\n        ");
+  data.buffer.push("</h3>\n\n      <div class=\"movie-poster\">\n        ");
+  data.buffer.push(escapeExpression((helper = helpers.poster || (depth0 && depth0.poster),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data},helper ? helper.call(depth0, "poster_path", "title", options) : helperMissing.call(depth0, "poster", "poster_path", "title", options))));
+  data.buffer.push("\n      </div>\n\n      <strong>Showtimes</strong>\n\n      <p class=\"movie-showtimes\">\n        ");
   stack1 = helpers.each.call(depth0, "showtimes", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n      </p>\n\n      <div class=\"text-center\">\n        <a class=\"button radius\">Buy Tickets</a>\n      </div>\n    </li>\n  ");
@@ -106,11 +100,11 @@ function program1(depth0,data) {
 function program2(depth0,data) {
   
   var buffer = '';
-  data.buffer.push("\n          ");
+  data.buffer.push("\n          <span class=\"movie-showtime\">");
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "", {hash:{
     'unescaped': ("true")
   },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
-  data.buffer.push("\n        ");
+  data.buffer.push("</span>\n        ");
   return buffer;
   }
 

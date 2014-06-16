@@ -4,14 +4,14 @@
       <h3 class="movie-title">{{title}}</h3>
 
       <div class="movie-poster">
-        <img src="{{{unbound App.movieDbImageBase}}}{{{unbound poster_path}}}" alt="No movie poster for {{{unbound title}}}">
+        {{poster poster_path title}}
       </div>
 
       <strong>Showtimes</strong>
 
-      <p>
+      <p class="movie-showtimes">
         {{#each showtimes}}
-          {{{this}}}
+          <span class="movie-showtime">{{{this}}}</span>
         {{else}}
           No showtimes
         {{/each}}
