@@ -4,7 +4,7 @@ class example {
 
     String example = "some string";
 
-    example = 100;
+    example = 100; // This is not allowed in Java
 
     System.out.print(example);
   }
