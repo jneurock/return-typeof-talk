@@ -74,39 +74,38 @@ var TestRoute = {
     if (!this.get('appIndexApiSuccess')) {
     
       this.set('appIndexApiSuccess', App.Index.apiSuccess);
-
-      /*
-       * Proxy App.Index.apiSuccess method.
-       * Decorate with show times since they aren't
-       * available with the API, yet.
-       */
-      App.Index.apiSuccess = function(response) {
-
-        var i = 0,
-            results = context.get('appIndexApiSuccess').call(this, response);
-
-        for ( i = 0; i < results.length; i++ ) {
-
-          if (i % 2 === 0) {
-
-            results[i].showtimes = [
-              '10:00am',
-              '4:00pm'
-            ];
-
-          } else {
-
-            results[i].showtimes = [
-              '1:00pm',
-              '7:00pm'
-            ];
-          }
-        }
-
-        return results;
-      };
-
     }
+
+    /*
+     * Proxy App.Index.apiSuccess method.
+     * Decorate with show times since they aren't
+     * available with the API, yet.
+     */
+    App.Index.apiSuccess = function(response) {
+
+      var i = 0,
+          results = context.get('appIndexApiSuccess').call(this, response);
+
+      for ( i = 0; i < results.length; i++ ) {
+
+        if (i % 2 === 0) {
+
+          results[i].showtimes = [
+            '10:00am',
+            '4:00pm'
+          ];
+
+        } else {
+
+          results[i].showtimes = [
+            '1:00pm',
+            '7:00pm'
+          ];
+        }
+      }
+
+      return results;
+    };
 
     transition.then(function() {
 
