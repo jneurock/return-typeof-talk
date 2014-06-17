@@ -1,9 +1,3 @@
-/*
- * TODO:
- *   Create a JSON file with some fake special engagement movies
- *   Create some fake posters for the movies
- */
-
 /**
  * The special engagements route
  * 
