@@ -1,5 +1,6 @@
 /**
- * Ember.js - A framework for creating <strong>ambitious</strong> web applications
+ * Ember.js - A framework for creating
+ * <strong>ambitious</strong> web applications
  *
  * @external Ember
  * @see {@link http://emberjs.com/api/}
